@@ -12,7 +12,7 @@ import { TasksService } from '../../tasks.service';
   template: `
     <div class="g-row">
       <div class="g-col">
-        <app-task-form (createTask)="tasksService.createTask($event)"></app-task-form>
+        <app-task-form (createTask)="tasksService.createTask($event)" (refreshIndexDB)="tasksService.refreshIDB($event)"></app-task-form>
       </div>
 
       <div class="g-col">

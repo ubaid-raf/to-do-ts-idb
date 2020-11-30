@@ -26,7 +26,7 @@ import { ITask } from '../../models';
 
 export class TaskListComponent {
   @Input() filter: string;
-  @Input() tasks: FirebaseListObservable<ITask[]>;
+  @Input() tasks: ITask[];
 
   @Output() remove = new EventEmitter(false);
   @Output() update = new EventEmitter(false);

@@ -16,13 +16,15 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angul
         name="title"
         placeholder="What needs to be done?"
         required
-        type="text">
+        type="text" />
     </form>
+    <form (ngSubmit)="refreshIDB()"><button onclick="refreshIDB()">Resfresh Data</button></form>
   `
 })
 
 export class TaskFormComponent {
   @Output() createTask = new EventEmitter(false);
+  @Output() refreshIndexDB = new EventEmitter(false);
 
   title = '';
 
@@ -36,5 +38,9 @@ export class TaskFormComponent {
       this.createTask.emit(title);
     }
     this.clear();
+  }
+
+  refreshIDB(): void {
+    this.refreshIndexDB.emit();
   }
 }

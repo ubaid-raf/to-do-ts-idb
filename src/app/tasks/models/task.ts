@@ -1,4 +1,5 @@
 import { firebase } from '../../firebase';
+import { UUID } from 'angular2-uuid';
 
 
 export interface ITask {
